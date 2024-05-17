@@ -1,10 +1,8 @@
-# Dolphin segmentation
+# Разработка модели сегментации морских млекопитающих
 
 ## Описание проекта
 
-Данный проект является выпускной квалификационной работой по направлению Инженерия искусственного интеллекта на магистратуре УрФУ ИРИТ-РТФ
-
-Автор - Иванов Александр Игоревич
+Данный проект является выпускной квалификационной работой по направлению Инженерия искусственного интеллекта на магистратуре УрФУ ИРИТ-РТФ. Разработанный инструмент предназначен для сегментации дельфинов.
 
 Модель - Unet++
 
@@ -12,13 +10,7 @@
 
 Достигнутая IoU составляет 0.95
 
-Используемые инструменты:
-- [[SMP](https://smp.readthedocs.io/en/latest/index.html)]
-- [[Tensorboard](https://www.tensorflow.org/?hl=ru)] - для отслеживания прогресса обучения
-- [[Albumentations](https://albumentations.ai/)] - аугментации
-- [[AnyLabeling](https://anylabeling.nrl.ai/)] - для разметки данных
-
-### Содержание
+## Содержание
  1. [Обучение](#start)
  2. [Примеры работы](#examples)
  3. [Тест](#inference)
@@ -66,6 +58,12 @@ python3 train.py
 
 
 ### Ссылки <a name="datasets"><a/>
+
+#### Используемые инструменты:
+- [[SMP](https://smp.readthedocs.io/en/latest/index.html)] - библиотека с предварительно обученными моделями сегментации
+- [[Tensorboard](https://www.tensorflow.org/?hl=ru)] - для отслеживания прогресса обучения
+- [[Albumentations](https://albumentations.ai/)] - аугментации
+- [[AnyLabeling](https://anylabeling.nrl.ai/)] - для разметки данных
 #### NDD20
 https://data.ncl.ac.uk/collections/The_Northumberland_Dolphin_Dataset_2020/4982342/1
 #### Happywhale
