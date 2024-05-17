@@ -41,7 +41,7 @@ python3 train.py
 
 ### Примеры работы <a name="examples"></a>
 
-<img src="test_result/000a8f2d5c316a.png" width="256" height="256"> <img src="test_result/000c476c11bad5.png" width="256" height="256">
+<img src="test_result/000a8f2d5c316a.png" width="256" height="256"> <img src="test_result/000c476c11bad5.png" width="256" height="256"> <img src="test_result/00aa710486d3b5.png" width="256" height="256">
 
 
 ### Тест <a name="inference"></a>
