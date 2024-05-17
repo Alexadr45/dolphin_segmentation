@@ -41,8 +41,7 @@ python3 train.py
 
 ### Примеры работы <a name="examples"></a>
 
-<img src="test_result/000a8f2d5c316a.png" width="256" height="256"> <img src="test_result/000c476c11bad5.png" width="256" height="256"> <img src="test_result/00aa710486d3b5.png" width="256" height="256"> <img src="test_result/00b7e608440f77.png" width="256" height="256">
-<img src="test_result/00c4c5832c0c78.png" width="256" height="256"> <img src="test_result/00cb904cf19b86.png" width="256" height="256"> <img src="test_result/00d0f38d99c221.png" width="256" height="256"> <img src="test_result/00e3258f41806c.png" width="256" height="256">
+<img src="test_result/000a8f2d5c316a.png" width="256" height="256"> <img src="test_result/000c476c11bad5.png" width="256" height="256"> <img src="test_result/00aa710486d3b5.png" width="256" height="256"> <img src="test_result/00b7e608440f77.png" width="256" height="256"> <img src="test_result/00c4c5832c0c78.png" width="256" height="256"> <img src="test_result/00cb904cf19b86.png" width="256" height="256"> <img src="test_result/00d0f38d99c221.png" width="256" height="256"> <img src="test_result/00e3258f41806c.png" width="256" height="256"> <img src="test_result/00e67227918b41.png" width="256" height="256">
 
 
 ### Тест <a name="inference"></a>
