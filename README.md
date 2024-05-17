@@ -11,21 +11,28 @@
 
 ### Обучение <a name="start"></a>
 
-#### 1. Склонируйте репозиторий
+Для повторения эксперимента используйте следующую инструкцию:
+
+#### Прежде всего, склонируйте репозиторий себе на локальный компьютер и получите к нему доступ с помощью команды
 
 ```bash
-$ git clone https://github.com/Alexadr45/dolphin_segmentation.git
+git clone https://github.com/Alexadr45/dolphin_segmentation.git
+cd dolphin_segmentation
 ```
 
-#### 2. Установите библиотеки
+#### Затем установите необходимые библиотеки с помощью команды
 
 ```bash
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-#### 3. Установите параметры в train_config.py
+#### Поменяйте параметры в train_config.py
 
-#### 4. Запустите обучение
+- Путь до изображений
+- Пути к маскам
+
+
+#### Запустите обучение
 
 ```bash
 python3 train.py
@@ -34,7 +41,7 @@ python3 train.py
 
 ### Примеры работы <a name="examples"></a>
 
-вставить фотки
+<img src="test_result/000a8f2d5c316a.png" width="256" height="256"> <img src="test_result/000c476c11bad5.png" width="256" height="256">
 
 
 ### Тест <a name="inference"></a>
