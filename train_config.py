@@ -1,16 +1,15 @@
 class ModelConfig:
     def __init__(self):
         # paths
-        self.image_path = '/kaggle/input/ndd-df/dolphins/ABOVE'
-        self.masks = '/kaggle/input/masks-ndd'
-        self.train_directory = '/kaggle/working/train_dir'
-        self.val_directory = '/kaggle/working/val_dir'
-        self.tb_log_path = 'tb_log'
-        self.model_save_path = 'best_model.pt'
+        self.image_path = '../data/images' # Путь к каталогу с изображениями
+        self.train_directory = '../data/train_dir' # Путь к каталогу с тренировочной выборкой масок
+        self.val_directory = '../data/val_dir' # Путь к каталогу с тестовой выборкой масок
+        self.tb_log_path = 'tb_log' # Куда сохранять Tensorboard logs
+        self.model_save_path = 'best_model.pt' # Куда сохранять модель
         
         # model params
         self.model = 'UnetPlusPlus'
-        self.encoder_name="mobilenet_v2"
+        self.encoder_name='mobilenet_v2'
         self.num_epochs = 10
         self.batch_size = 16
         self.learning_rate = 0.001
