@@ -1,9 +1,9 @@
 class InferenceConfig:
     def __init__(self):
         # paths
-	directory_or_image_path = '../test_image.jpg'
+	directory_or_image_path = '../test_image.jpg' # Путь до файла или директории
 	output_directory = '../output_images'
-	model_path = '../model/best_model.pt'
+	model_path = '../unet_dolphin_seg.pt'
         
         # model params
         self.model = 'UnetPlusPlus'
