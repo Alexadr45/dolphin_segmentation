@@ -4,7 +4,11 @@ import numpy as np
 from PIL import Image
 import os
 import segmentation_models_pytorch as smp
+import gdown
 from Inference_config import InferenceConfig
+
+InferenceConfig = InferenceConfig()
+gdown.download(id="1N6BmLXrieLy6Z3aBawKJBZlkcQ1OSsT6", output=InferenceConfig.model_path, quiet=False)
 
 def load_and_preprocess_image(image_path):
     image = Image.open(image_path).convert("RGB")
@@ -36,22 +40,30 @@ def predict_mask(image_path, model, threshold=InferenceConfig.threshold):
     mask[mask<threshold]=0
     return mask
 
-def overlay_mask(image_path, mask, alpha, output_path):
+def overlay_mask(image_path, mask, alpha, output_path, save=True):
     image = Image.open(image_path).convert("RGBA").resize([256, 256])
     mask = Image.fromarray((mask * 255).astype(np.uint8), mode='L')
     red_channel = np.array(mask)
     red_mask = np.stack([red_channel, np.zeros_like(red_channel), np.zeros_like(red_channel), np.ones_like(red_channel) * int(255 * alpha)], axis=-1)
     combined = Image.fromarray(np.uint8(red_mask), 'RGBA')
     overlay = Image.alpha_composite(image, combined)
-    overlay.save(output_path.replace('.jpg', '.png'))
+    if save:
+        overlay.save(output_path.replace('.jpg', '.png'))
+    else:
+        return(overlay)
 
-def process_images_in_directory(directory_path, model, alpha=alpha, output_directory='output'):
-    os.makedirs(output_directory, exist_ok=True)  # Создание выходного каталога, если его нет
-    for filename in os.listdir(directory_path):
-        if filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.png'):
-            image_path = os.path.join(directory_path, filename)
-            predicted_mask = predict_mask(image_path, model)
-            output_path = os.path.join(output_directory, filename)
-            overlay_mask(image_path, predicted_mask, alpha, output_path)
+def process_images_in_directory(directory_or_image_path, model, alpha=alpha, output_directory='output', directory=True):
+    if directory:
+        os.makedirs(output_directory, exist_ok=True)  # Создание выходного каталога, если его нет
+        for filename in os.listdir(directory_or_image_path):
+            if filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.png'):
+                image_path = os.path.join(directory_or_image_path, filename)
+                predicted_mask = predict_mask(image_path, model)
+                output_path = os.path.join(output_directory, filename)
+                overlay_mask(image_path, predicted_mask, alpha, output_path)
+    else:
+        if directory_or_image_path.endswith('.jpg') or directory_or_image_path.endswith('.jpeg') or directory_or_image_path.endswith('.png'):
+                predicted_mask = predict_mask(directory_or_image_path, model)
+                return(overlay_mask(directory_or_image_path, predicted_mask, alpha, output_path=None, save=False))
 
-process_images_in_directory(directory_path=InferenceConfig.directory_path, model=model, output_directory=InferenceConfig.output_directory)
+process_images_in_directory(directory_or_image_path=InferenceConfig.directory_path, model=model, output_directory=InferenceConfig.output_directory, directory=False)
