@@ -1,7 +1,7 @@
 class InferenceConfig:
     def __init__(self):
         # paths
-	directory_path = '../test_images'
+	directory_or_image_path = '../test_image.jpg'
 	output_directory = '../output_images'
 	model_path = '../model/best_model.pt'
         
