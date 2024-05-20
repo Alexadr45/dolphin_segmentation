@@ -36,8 +36,8 @@ pip install -r requirements.txt
 
 #### Поменяйте параметры в train_config.py
 
-- Путь до изображений
-- Пути к маскам
+- Пути к файлам
+- Параметры модели
 
 
 #### Запустите обучение
@@ -68,3 +68,6 @@ python3 train.py
 https://data.ncl.ac.uk/collections/The_Northumberland_Dolphin_Dataset_2020/4982342/1
 #### Happywhale
 https://www.kaggle.com/c/happy-whale-and-dolphin
+#### Размеченные фотографии из Happywhale
+Размеченный датасет
+https://drive.google.com/drive/folders/1d9s9dGq7FeU-G-LTQkNaCKnWmdhKjjlg?usp=drive_link
