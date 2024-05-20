@@ -66,4 +66,4 @@ def process_images_in_directory(directory_or_image_path, model, alpha=alpha, out
                 predicted_mask = predict_mask(directory_or_image_path, model)
                 return(overlay_mask(directory_or_image_path, predicted_mask, alpha, output_path=None, save=False))
 
-process_images_in_directory(directory_or_image_path=InferenceConfig.directory_path, model=model, output_directory=InferenceConfig.output_directory, directory=False)
+process_images_in_directory(directory_or_image_path=InferenceConfig.directory_path, model=model, output_directory=InferenceConfig.output_directory, directory=InferenceConfig.directory)
