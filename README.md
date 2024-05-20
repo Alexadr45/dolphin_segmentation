@@ -54,8 +54,31 @@ python3 train.py
 
 ### Тест <a name="inference"></a>
 
-инструкция по использованию
+Чтобы воспользоваться готовой моделью, используйте следующую инструкцию:
 
+#### Прежде всего, склонируйте репозиторий себе на локальный компьютер и получите к нему доступ с помощью команды
+
+```bash
+git clone https://github.com/Alexadr45/dolphin_segmentation.git
+cd dolphin_segmentation
+```
+
+#### Затем установите необходимые библиотеки с помощью команды
+
+```bash
+pip install -r requirements.txt
+```
+
+#### Измените параметры в файле Inference_config.py
+
+- Установите путь до изображения в параметр directory_or_image_path
+- Чтобы сделать предикт для нескольких изображений, установите параметр self.directory = False
+
+#### Запустите скрипт
+
+```bash
+python3 Inference.py
+```
 
 ### Ссылки <a name="datasets"><a/>
 
@@ -69,5 +92,4 @@ https://data.ncl.ac.uk/collections/The_Northumberland_Dolphin_Dataset_2020/49823
 #### Happywhale
 https://www.kaggle.com/c/happy-whale-and-dolphin
 #### Размеченные фотографии из Happywhale
-Размеченный датасет
 https://drive.google.com/drive/folders/1d9s9dGq7FeU-G-LTQkNaCKnWmdhKjjlg?usp=drive_link
