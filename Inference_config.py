@@ -10,6 +10,7 @@ class InferenceConfig:
         self.encoder_name="efficientnet-b4"
 	self.alpha = 0.25
 	self.thresshold = 0.5
+	self.directory = False # Если указан путь для директории, установить True, если до изображения - False.
 ​
         # for resize images and masks
         self.shape = [256, 256]
